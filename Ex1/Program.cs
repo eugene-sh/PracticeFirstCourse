@@ -9,7 +9,7 @@ namespace Ex1
 	{
 		static void Main()
 		{
-			Write("Please, input any natural number: ");
+			Write("Please, enter any natural number: ");
 
 			if (!int.TryParse(ReadLine(), out int input))
 				throw new ArgumentException("Error. Only natural numbers.");
