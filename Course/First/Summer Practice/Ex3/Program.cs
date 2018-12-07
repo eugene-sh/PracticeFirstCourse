@@ -23,7 +23,7 @@ namespace Ex3
 					sourceWord = w,
 					wordWithoutVowels = TrimVowelLetters(w)
 				})
-				.OrderByDescending(w => w.wordWithoutVowels.Length);
+				.OrderBy(w => w.wordWithoutVowels.Length);
 
 			foreach (var item in collection)
 				WriteLine($"{item.sourceWord} - {item.wordWithoutVowels} - {item.wordWithoutVowels.Length}");
