@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.gridOfTours = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -36,18 +36,19 @@
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.reportButton = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.testDataCheckbox = new System.Windows.Forms.CheckBox();
+			((System.ComponentModel.ISupportInitialize)(this.gridOfTours)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// gridOfTours
 			// 
-			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(778, 427);
-			this.dataGridView1.TabIndex = 0;
-			this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+			this.gridOfTours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.gridOfTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridOfTours.Location = new System.Drawing.Point(12, 12);
+			this.gridOfTours.Name = "gridOfTours";
+			this.gridOfTours.Size = new System.Drawing.Size(778, 427);
+			this.gridOfTours.TabIndex = 0;
+			this.gridOfTours.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.InvalidQuantitySoldTours_DataError);
 			// 
 			// label1
 			// 
@@ -110,11 +111,24 @@
 			this.reportButton.UseVisualStyleBackColor = true;
 			this.reportButton.Click += new System.EventHandler(this.Report_Click);
 			// 
+			// testDataCheckbox
+			// 
+			this.testDataCheckbox.AutoSize = true;
+			this.testDataCheckbox.Checked = true;
+			this.testDataCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.testDataCheckbox.Location = new System.Drawing.Point(599, 466);
+			this.testDataCheckbox.Name = "testDataCheckbox";
+			this.testDataCheckbox.Size = new System.Drawing.Size(191, 17);
+			this.testDataCheckbox.TabIndex = 8;
+			this.testDataCheckbox.Text = "Использовать тестовые данные";
+			this.testDataCheckbox.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(802, 623);
+			this.Controls.Add(this.testDataCheckbox);
 			this.Controls.Add(this.reportButton);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox2);
@@ -122,12 +136,12 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.gridOfTours);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Туристические фирмы";
+			this.Text = "Туры туристические фирмы";
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridOfTours)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -135,7 +149,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView gridOfTours;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
@@ -143,6 +157,7 @@
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Button reportButton;
+		private System.Windows.Forms.CheckBox testDataCheckbox;
 	}
 }
 
