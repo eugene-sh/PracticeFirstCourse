@@ -1,12 +1,14 @@
-﻿namespace Lab4
+﻿namespace Lab4.Model
 {
-	public class Student
+	public class Student : Person
 	{
-		public string Name { get; set; }
-
-		public Student(string name)
+		public Student(string name) : base(name)
 		{
-			Name = name;
+		}
+
+		public void TakeTest()
+		{
+			System.Console.WriteLine("TakeTest");
 		}
 	}
 }
