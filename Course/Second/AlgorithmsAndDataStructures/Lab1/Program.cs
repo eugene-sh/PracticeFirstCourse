@@ -18,30 +18,42 @@ namespace Lab1
 			StackInitializer(firstStack);
 			StackInitializer(secondStack);
 
+            PrintStack(firstStack, "Первый стек");
+            PrintStack(secondStack, "Второй стек");
 
-			foreach(var item in firstStack)
-				Console.WriteLine(item);
+			var resultStack = new Stack<int>();
 
+			foreach (var item in firstStack.Where(i => i > 0))
+				resultStack.Push(item);
 			
-			foreach(var item in secondStack)
-				Console.WriteLine(item);
-			
-		}
+			foreach (var item in secondStack.Where(i => i > 0))
+				resultStack.Push(item);
+
+            PrintStack(resultStack.OrderByDescending(i => i), "Итоговый стек");
+        }
 
 		private static void StackInitializer(Stack<int> stack)
 		{
 			var orderedList = GenerateRandomListOfNumbers().OrderBy(x => x);			
 
-			foreach(var item in orderedList)
+			foreach (var item in orderedList)
 				stack.Push(item);
 		}
 
 		private static IEnumerable<int> GenerateRandomListOfNumbers() 
 		{
-			var randomize = new Random();
+			var random = new Random();
 
 			for(var i = 0; i < StackSize; i++)
-				yield return randomize.Next(MinStackValue, MaxStackValue);	
+				yield return random.Next(MinStackValue, MaxStackValue);	
 		}
+
+        private static void PrintStack<T>(IEnumerable<T> stack, string msg)
+        {
+            Console.WriteLine(msg);
+
+            foreach (var item in stack)
+                Console.WriteLine(item);
+        }
 	}
 }
