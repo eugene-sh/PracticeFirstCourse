@@ -12,11 +12,8 @@ namespace Lab1
 
 		static void Main()
 		{
-			var firstStack = new Stack<int>();
-			var secondStack = new Stack<int>();
-
-			StackInitializer(firstStack);
-			StackInitializer(secondStack);
+			var firstStack = GetRandomIntStack();
+			var secondStack = GetRandomIntStack();
 
             PrintStack(firstStack, "Первый стек");
             PrintStack(secondStack, "Второй стек");
@@ -32,12 +29,15 @@ namespace Lab1
             PrintStack(resultStack.OrderByDescending(i => i), "Итоговый стек");
         }
 
-		private static void StackInitializer(Stack<int> stack)
+		private static Stack<int> GetRandomIntStack()
 		{
+			var stack = new Stack<int>();
 			var orderedList = GenerateRandomListOfNumbers().OrderBy(x => x);			
 
 			foreach (var item in orderedList)
 				stack.Push(item);
+
+			return stack;
 		}
 
 		private static IEnumerable<int> GenerateRandomListOfNumbers() 
